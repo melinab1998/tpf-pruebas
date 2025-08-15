@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import logoLight from "@/img/logo-light.png";
-import logoDark from "@/img/logo-dark.png";
+import logoLight from "@/img/logo-light-1.png";
+import logoDark from "@/img/logo-dark-1.png";
 import { ModeToggle } from "@/components/mode-toggle";
 import { useTheme } from "next-themes";
 
@@ -15,36 +15,41 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-[var(--background)] text-[var(--foreground)]">
       {/* NAVBAR */}
+       {/* NAVBAR */}
       <nav className="w-full border-b border-[var(--border)] bg-[var(--card)]">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+        <div className="max-w-6xl mx-auto px-4 py-5 flex justify-between items-center">
           <div className="flex items-center gap-3">
             <img
               src={theme === "dark" ? logoDark : logoLight}
               alt="Logo clínica"
-              className="h-25 w-auto"
+              className="h-12 w-auto"
             />
+            <span className="hidden md:inline text-lg font-bold text-[var(--primary)]">
+              STURN
+            </span>
           </div>
           <div className="flex gap-4 items-center">
-            <Input
-              placeholder="Buscar..."
-              className="hidden md:block w-48 bg-[var(--input)] text-[var(--foreground)] placeholder:text-[var(--muted-foreground)]"
-            />
             <Button variant="ghost">Inicio</Button>
             <Button variant="ghost">Servicios</Button>
             <Button variant="ghost">Contacto</Button>
+            <Button variant="outline" className="hidden md:inline">
+              Iniciar sesión
+            </Button>
             <ModeToggle />
           </div>
         </div>
       </nav>
 
       {/* HERO */}
-      <section className="flex flex-col items-center justify-center text-center mt-16 px-4">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">Bienvenido a Clínica Odontológica</h1>
-        <p className="text-[var(--muted-foreground)] max-w-2xl">
+        <section className="flex flex-col items-center justify-center text-center mt-16 px-4">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          Bienvenido a Clínica Odontológica
+        </h1>
+        <p className="text-[var(--muted-foreground)] max-w-2xl leading-relaxed text-lg md:text-xl mt-2 mb-6">
           Gestiona tus turnos de forma fácil, rápida y segura. Nuestra plataforma
-          digital está diseñada para profesionales y pequeños negocios.
+          digital está diseñada para profesionales y pequeños negocios. 
         </p>
-        <Button className="mt-6 bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[var(--primary-foreground)] hover:text-[var(--primary)] transition-colors">
+        <Button className="mt-2 bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[var(--primary-foreground)] hover:text-[var(--primary)] transition-colors">
           Agendar Turno
         </Button>
       </section>
