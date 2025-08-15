@@ -4,17 +4,25 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import logo from "@/img/logo-erica.png";
+import logoLight from "@/img/logo-light.png";
+import logoDark from "@/img/logo-dark.png";
 import { ModeToggle } from "@/components/mode-toggle";
+import { useTheme } from "next-themes";
 
 export default function Home() {
+
+    const { theme } = useTheme();
   return (
     <div className="min-h-screen flex flex-col bg-[var(--background)] text-[var(--foreground)]">
       {/* NAVBAR */}
       <nav className="w-full border-b border-[var(--border)] bg-[var(--card)]">
         <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="Logo clínica" className="h-16 w-auto" />
+            <img
+              src={theme === "dark" ? logoDark : logoLight}
+              alt="Logo clínica"
+              className="h-25 w-auto"
+            />
           </div>
           <div className="flex gap-4 items-center">
             <Input
