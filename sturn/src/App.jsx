@@ -1,11 +1,12 @@
-import NavBar from "../src/components/ui/NavBar.jsx"
+// src/App.jsx
+import React from "react";
+import Home from "./components/home/Home"
+import { ThemeProvider } from "@/components/theme-provider";
 
-function App(){
-  return(
-    <div className="flex flex-col items-center justify-center min-h-svh">
-      <NavBar/>
-    </div>
-  )
+export default function App() {
+  return (
+    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+      <Home />
+    </ThemeProvider>
+  );
 }
-
-export default App

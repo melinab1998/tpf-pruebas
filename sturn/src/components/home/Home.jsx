@@ -1,0 +1,87 @@
+// src/pages/Home.jsx
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import logo from "@/img/logo-erica.png";
+import { ModeToggle } from "@/components/mode-toggle";
+
+export default function Home() {
+  return (
+    <div className="min-h-screen flex flex-col bg-[var(--background)] text-[var(--foreground)]">
+      {/* NAVBAR */}
+      <nav className="w-full border-b border-[var(--border)] bg-[var(--card)]">
+        <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+          <div className="flex items-center gap-3">
+            <img src={logo} alt="Logo clínica" className="h-16 w-auto" />
+          </div>
+          <div className="flex gap-4 items-center">
+            <Input
+              placeholder="Buscar..."
+              className="hidden md:block w-48 bg-[var(--input)] text-[var(--foreground)] placeholder:text-[var(--muted-foreground)]"
+            />
+            <Button variant="ghost">Inicio</Button>
+            <Button variant="ghost">Servicios</Button>
+            <Button variant="ghost">Contacto</Button>
+            <ModeToggle />
+          </div>
+        </div>
+      </nav>
+
+      {/* HERO */}
+      <section className="flex flex-col items-center justify-center text-center mt-16 px-4">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">Bienvenido a Clínica Odontológica</h1>
+        <p className="text-[var(--muted-foreground)] max-w-2xl">
+          Gestiona tus turnos de forma fácil, rápida y segura. Nuestra plataforma
+          digital está diseñada para profesionales y pequeños negocios.
+        </p>
+        <Button className="mt-6 bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[var(--primary-foreground)] hover:text-[var(--primary)] transition-colors">
+          Agendar Turno
+        </Button>
+      </section>
+
+      {/* CARDS DE SERVICIOS */}
+      <section className="max-w-6xl mx-auto mt-16 px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+        {["Odontología general", "Ortodoncia", "Estética dental"].map((servicio) => (
+          <Card key={servicio} className="bg-[var(--card)] border-[var(--border)]">
+            <CardHeader>
+              <CardTitle>{servicio}</CardTitle>
+            </CardHeader>
+            <CardContent className="text-[var(--muted-foreground)]">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              ullamcorper, erat in luctus posuere, arcu justo bibendum justo,
+              nec laoreet purus leo in elit.
+            </CardContent>
+          </Card>
+        ))}
+      </section>
+
+      {/* TESTIMONIOS */}
+      <section className="max-w-6xl mx-auto mt-16 px-4">
+        <h2 className="text-3xl font-bold mb-8 text-center">Nuestros Pacientes</h2>
+        <div className="flex flex-col md:flex-row gap-6 justify-center">
+          {["Ana", "Luis", "Carla"].map((nombre) => (
+            <Card key={nombre} className="flex-1 bg-[var(--card)] border-[var(--border)]">
+              <CardContent className="flex flex-col items-center text-center">
+                <Avatar className="mb-4">
+                  <AvatarImage src={`https://i.pravatar.cc/150?u=${nombre}`} />
+                  <AvatarFallback>{nombre[0]}</AvatarFallback>
+                </Avatar>
+                <p className="text-[var(--muted-foreground)]">
+                  {nombre} tuvo una experiencia excelente con nuestro servicio.
+                </p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="mt-16 py-6 border-t border-[var(--border)] text-center bg-[var(--card)]">
+        <p className="text-[var(--muted-foreground)]">© 2025 Clínica Odontológica. Todos los derechos reservados.</p>
+      </footer>
+    </div>
+  );
+}
+
