@@ -28,7 +28,7 @@ export default function Home() {
             <img
               src={theme === "dark" ? logoDark : logoLight}
               alt="Logo clínica"
-              className="h-12 w-auto"
+              className="h-12 w-auto mt-1.5 mb-1.5"
             />
             <span className="hidden md:inline text-lg font-bold text-[var(--primary)]">
               STURN
