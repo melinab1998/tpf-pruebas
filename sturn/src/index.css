@@ -71,14 +71,14 @@
 }
 
 :root {
-    --radius: 0.5rem;
+    --radius: 1.5rem;
   --background: oklch(0.98 0.002 247.8575); /* Un blanco ligeramente más cálido */
   --foreground: oklch(0.20 0.05 259.2010); /* Texto un poco más oscuro para mejor contraste */
   --card: oklch(1.0000 0 0); /* Mantenemos blanco puro para las cards */
   --card-foreground: oklch(0.20 0.05 259.2010);
   --popover: oklch(1.0000 0 0);
   --popover-foreground: oklch(0.20 0.05 259.2010);
-  --primary: oklch(0.6089 0.1109 221.7231); /* Mantenemos el azul principal */
+  --primary: oklch(0.6089 0.1109 221.72deg);
   --primary-foreground: oklch(1.0000 0 0);
   --secondary: oklch(0.95 0.01 247.8956); /* Un gris más cálido */
   --secondary-foreground: oklch(0.25 0.04 265.7549);
@@ -159,7 +159,7 @@
   --sidebar-border: oklch(0.2795 0.0368 260.0310);
   --sidebar-ring: oklch(0.5198 0.0936 223.1280);
   --destructive-foreground: oklch(0.9842 0.0034 247.8575);
-  --radius: 0.5rem;
+  --radius: 1.5rem;
   --font-sans: Inter;
   --font-serif: Nunito;
   --font-mono: Fira Code;
